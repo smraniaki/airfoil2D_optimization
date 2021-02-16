@@ -1,0 +1,10 @@
+U1=$(tail -1 postProcessing/probesFluid/50/mag\(U\) | tr -s ' ' | cut -d ' ' -f3)
+U2=$(tail -1 postProcessing/probesFluid/50/mag\(U\) | tr -s ' ' | cut -d ' ' -f4)
+echo U1=$(bc <<< "scale=10; ($U1)") >> PARM/PARM_out.dat
+echo U2=$(bc <<< "scale=10; ($U2)") >> PARM/PARM_out.dat
+
+
+P1=$(tail -1 postProcessing/probesFluid/0/p | tr -s ' ' | cut -d ' ' -f3)
+P2=$(tail -1 postProcessing/probesFluid/0/p | tr -s ' ' | cut -d ' ' -f4)
+echo p1=$(bc <<< "scale=10; ($P1)") >> PARM/PARM_out.dat
+echo p2=$(bc <<< "scale=10; ($P2)") >> PARM/PARM_out.dat
