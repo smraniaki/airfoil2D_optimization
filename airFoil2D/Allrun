@@ -1,0 +1,28 @@
+source ./PARM/1PARM_in
+echo v=$v
+echo u=$u
+#!/bin/sh
+#---------------------------------------------------------------------------
+#./input.sh
+rm -r 0
+cp -r 0.org 0
+sed -i -e "s/\[x]/$u/" -e "s/\[y]/$v/" 0/U
+
+#---------------------------------------------------------------------------
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # Tutorial run functions
+
+runApplication $(getApplication)
+
+
+
+#----------------------------------------------------------------------------
+
+bash ./post 
+source ./PARM/PARM_out.dat
+echo U1=$U1
+echo U2=$U2
+echo p1=$p1
+echo p2=$p2
+
+#------------------------------------------------------------------------------
