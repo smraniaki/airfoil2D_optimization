@@ -1,9 +1,17 @@
 source ./PARM/1PARM_in
-echo v=$v
 echo u=$u
-#!/bin/sh
+echo v=$v
+
+echo ${u} > PARM/parm/u
+chmod a+x PARM/parm/u
+#read u < "PARM/parm/u"
+#echo $u
+
+echo ${v} > PARM/parm/v
+chmod a+x PARM/parm/v
+#read v < "PARM/parm/v"
+#echo $v
 #---------------------------------------------------------------------------
-#./input.sh
 rm -r 0
 cp -r 0.org 0
 sed -i -e "s/\[x]/$u/" -e "s/\[y]/$v/" 0/U
@@ -24,5 +32,16 @@ echo U1=$U1
 echo U2=$U2
 echo p1=$p1
 echo p2=$p2
+
+echo ${p1} > PARM/parm/p1
+chmod a+x PARM/parm/p1
+
+echo ${p2} > PARM/parm/p2
+chmod a+x PARM/parm/p2
+#echo ${U1} >/home/reza/Desktop/optimization_problems/OpenFOAM/airFoil2D/PARM/parm/U1
+#echo ${U2} >/home/reza/Desktop/optimization_problems/OpenFOAM/airFoil2D/PARM/parm/U2
+#echo ${p1} >/home/reza/Desktop/optimization_problems/OpenFOAM/airFoil2D/PARM/parm/p1
+#echo ${p2} >/home/reza/Desktop/optimization_problems/OpenFOAM/airFoil2D/PARM/parm/p2
+
 
 #------------------------------------------------------------------------------

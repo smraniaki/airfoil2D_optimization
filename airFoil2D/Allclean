@@ -12,3 +12,8 @@ rm -r postProcessing
 
 rm PARM/PARM_out.dat
 touch PARM/PARM_out.dat
+
+rm PARM/parm/*
+
+cp ../airfoil2D.py .
+
